@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require "fileutils"
+
+SCRIPT_SOURCE = File.expand_path(File.dirname(__FILE__)) + "/scripts/."
+SCRIPT_TARGET = File.expand_path("~/Library/Scripts")
+
+# Create user scripts folder if it doesn't already exist
+FileUtils.mkdir_p SCRIPT_TARGET
+
+# Copy scripts to user scripts folder
+FileUtils.cp_r SCRIPT_SOURCE, SCRIPT_TARGET
